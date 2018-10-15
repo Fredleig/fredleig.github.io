@@ -1,0 +1,167 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.welcome
+		.h1
+			font-size: 47px
+	.header-contacts
+		font-size: 16px
+
+	.s
+		&-king, &-review, &-partners
+			padding: 8% 0
+		&-call
+			.callback
+				padding: 10%
+
+	.fotorama
+		&__nav
+			&-wrap
+				bottom: 5px
+				padding: 0 15px	
+		&__thumb 
+			height: 80%
+			width: 80%
+			&-border //красит активный элемент
+				display: none
+
+
+// ≥992px
++media-breakpoint-down(md)
+	.welcome
+		.h1
+		font-size: 48px
+	.header-contacts
+		font-size: 12px
+		text-align: center
+
+	.fotorama
+		&__nav
+			&-wrap
+				position: absolute
+				bottom: 5px
+				padding: 0 30px
+				width: 100%
+
+	.s-call
+		&.inverse
+			background-size: cover
+			&::before
+				width: 100%
+
+	.partners
+		.owl-nav
+			> button
+				&.owl-prev
+					left: 0
+				&.owl-next
+					right: 0
+
+	.footer-addr
+		.footer-phone
+			font-size: 24px
+
+	.social-footer
+		margin-top: 0
+		
+	.logo-footer 
+		+ p	
+			margin-bottom: 10px
+				
+// ≥768px
++media-breakpoint-down(sm)
+	.top-lane
+		.logo img 
+			margin: 0
+		.phone
+			display: none
+	.header-composition
+		.welcome
+			p
+				font-size: 11px
+			.h1
+				font-size: 34px
+			strong
+				margin:
+					top: 25px
+					bottom: 35px
+
+
+	.header-contacts
+		text-align: left
+		.container
+			margin-left: 0px
+			padding: 0
+
+	.social-footer
+		margin-top: 32px
+
+	.footer-addr
+		.footer-phone
+			padding-top: 20px
+			.fas
+				&::before	
+					top: 31px
+
+// ≥576px
++media-breakpoint-down(xs)
+
+	.header-composition
+		width: 80%
+		p
+			font-size: 14px
+		.welcome
+			span
+				font-size: 10px
+			.h1
+				font-size: 32px
+			strong
+				font-size: 14px
+				margin:
+					top: 15px
+					bottom: 25px
+
+	.carousel-services-image
+		display: none
+
+	.fotorama
+		&__nav
+			display: none
+
+	.quotes
+		display: none
+
+	.social-footer
+		margin:
+			top: 0
+			bottom: 15px
+		.soc li a
+			margin-top: 0		
+	.footer-column
+		margin-bottom: 20px	
+	.footer-addr
+		.footer-phone
+			padding-top: 0px
+			.fas
+				&::before	
+					top: 10px
+	.footer-menu
+		padding-left: 5px
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
