@@ -90,12 +90,12 @@ $(function() {
 
 
 
-	//E-mail Ajax Send
+		//E-mail Ajax Send
 	$("form.callback").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "fredleig.github.io/First-Layout/mail.php", //Change
+			url: "/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			$(th).find('.success').addClass('active').css('display','flex').hide().fadeIn();
