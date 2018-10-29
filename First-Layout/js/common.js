@@ -94,7 +94,7 @@ $(function() {
 	$("form.callback").submit(function() { //Change
 		var th = $(this);
 		$.ajax({
-			type: "PATCH",
+			type: "Get",
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
