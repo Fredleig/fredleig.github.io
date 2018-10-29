@@ -95,7 +95,7 @@ $(function() {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "fredleig.github.io/First-Layout/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			$(th).find('.success').addClass('active').css('display','flex').hide().fadeIn();
