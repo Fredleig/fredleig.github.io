@@ -1,0 +1,62 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+
+// ≥992px
++media-breakpoint-down(md)
+	//Логотип опустить чуть ниже
+	.top-menu
+		.logo
+			top: 2px		
+			
+
+// ≥768px
++media-breakpoint-down(sm)
+	// Уменьшение шрифта приветствия
+	.carousel-welcome
+		.carousel-header-item
+			h1
+				font-size: 40px
+			p
+				font-size: 30px
+
+// ≥576px
++media-breakpoint-down(xs)
+	// выравнивание меню
+	.top-menu
+		.my-nav
+			flex-flow: row wrap
+			align-content: center
+
+	// Приветствие - сменить позиционирование и мин высоту
+	.welcome
+		height: 90%
+		min-height: 576px
+		&-img
+			background-position: 60%
+	// Уменьшение шрифта приветствия
+	.carousel-welcome
+		.carousel-header-item
+			h1
+				font-size: 25px
+			p
+				font-size: 20px
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
