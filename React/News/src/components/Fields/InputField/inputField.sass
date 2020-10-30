@@ -1,0 +1,45 @@
+@import "../../../styles/vars"
+
+.input-wrap
+  // Переменные
+  $heightWrap: 62px
+  $heightCircle: 30px
+  $verticalAlignCircle: ($heightWrap - $heightCircle) / 2
+  $verticalAlignIcon: $verticalAlignCircle / 2.5
+  // [Конец] Переменные
+  margin-top: 10px
+  box-sizing: border-box
+  height: $heightWrap
+  //width: 48%
+  display: flex
+  border: $borderFields
+  .input-icon-wrap
+    display: inline-block
+    border-right: $borderFields
+    width: $heightWrap
+    text-align: center
+    .input-label
+      margin-top: $verticalAlignCircle + 2px
+    .input-icon-circle
+      display: inline-block
+      text-align: center
+      border-radius: 26px
+      height: $heightCircle
+      width: $heightCircle
+      border: $accentColor 1px solid
+      margin-top: $verticalAlignCircle
+      .input-icon
+        margin-top: $verticalAlignIcon
+        height: 15px
+        width: 15px
+  input
+    font-family: "Roboto-Regular", sans-serif
+    box-sizing: border-box
+    border: none
+    height: 100%
+    width: 100%
+    color: $colorTextInput
+    font-size: .7em
+    padding: 1.4em
+    outline: none
+

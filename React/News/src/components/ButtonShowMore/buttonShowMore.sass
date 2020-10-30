@@ -1,0 +1,27 @@
+@import "../../styles/vars"
+
+.show-more-btn
+  box-sizing: border-box
+  margin-top: 30px
+  width: 100%
+  text-align: center
+  background-color: $accentColor
+  padding: 10px
+  cursor: pointer
+  color: $colorAside
+  border-radius: $borderRadius
+  transition: all .1s ease
+  &:hover
+    color: $asaideBackground
+  &:active
+    color: $colorAside
+    box-shadow: none
+  .button-text-loading
+    color: $colorAside
+    margin-left: 10px
+
+.show-more-btn-loading
+  @extend .show-more-btn
+  background-color: lighten($accentColor, 10%)
+  cursor: default
+

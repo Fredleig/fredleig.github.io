@@ -1,0 +1,44 @@
+@import "../../../styles/vars"
+
+@mixin colorText($color)
+  .navigation-link
+    color: $color
+
+.navigation
+  font-family: "Roboto-Light", sans-serif
+  text-transform: uppercase
+  text-align: right
+  line-height: 64px
+  border-bottom: 1px solid #494653
+  border-top: 1px solid #494653
+.wrapper-link
+  background-color: $backgroundNavigation
+  padding: 0 20px
+  border-bottom: 1px solid darken(#494653, 15%)
+  transition: all .1s ease
+  &:last-child
+    border-bottom: none
+  &:hover
+    @include colorText($accentColor)
+  &:active
+    @include colorText($accentColorGreen)
+  .navigation-link
+    display: block
+    color: $colorAside
+    height: 62px
+    text-decoration: none
+
+.wrapper-link.active
+  background: linear-gradient(to top, darken($accentColor, 20%) 0%,  $accentColor 70%)
+  &:hover
+    @include colorText($colorAside)
+
+h4
+  text-align: right
+  padding: 0 20px
+  color: $colorAside
+
+
+
+
+

@@ -1,0 +1,29 @@
+@import "../../styles/vars"
+
+.error-not-page-wrapper
+  height: 100vh
+  display: flex
+  align-items: center
+  .container-error-not-page
+    width: 40%
+    margin: auto
+    padding: 40px 30px
+    border: $asaideBackground 1px solid
+    border-radius: 1px
+
+.title-page-not-found
+  font-family: "Roboto-Light", sans-serif
+  padding-bottom: .5em
+  border-bottom: $colorText 1px solid
+  margin-top: 0
+  margin-bottom: 30px
+  span
+    font-family: "Roboto-Regular", sans-serif
+
+.content-page-not-found
+  color: $colorTextInput
+  margin-top: 0
+  &:last-child
+    margin: 0
+  span
+    background: rgba(255, 228, 225, .5)

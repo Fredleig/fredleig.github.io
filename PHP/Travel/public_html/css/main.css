@@ -1,0 +1,235 @@
+html, body {
+    height: 100%;
+}
+
+.wrapper-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.my-content {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 36px auto;
+}
+
+footer {
+    flex: 0 0 auto;
+}
+
+.navbar-brand h4 {
+    color: #4f9ed9;
+    margin-bottom: .2em;
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #F39C12;
+}
+
+
+.display-3 {
+    line-height: 1;
+}
+
+/* Баннер */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    object-fit: cover;
+    height: 80vh;
+    width: 100%;
+}
+
+.banner-text-wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.banner-text-wrap .container {
+    padding: 15px;
+    position: relative;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.banner-text-wrap .test:before {
+    position: absolute;
+    background: inherit;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+    filter: blur(10px);
+}
+
+.banner-text-wrap h1, .banner-text-wrap h2, .banner-text-wrap h3, .banner-text-wrap h4, .banner-text-wrap p {
+    text-shadow: 1px 1px 1px white;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.banner-text-wrap h1 {
+    font-size: 5.5rem;
+}
+
+.banner-text-wrap h2 {
+    font-size: 4.5rem;
+}
+
+.banner-text-wrap h3 {
+    font-size: 3.5rem;
+}
+
+.banner-text-wrap h4 {
+    font-size: 2.5rem;
+}
+
+.banner-text-wrap p {
+    font-size: 1.2rem;
+}
+
+/* Посты*/
+.posts {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.posts .card {
+    width: 25%;
+    margin: 2em 1em;
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+}
+
+.card .fa {
+    margin-right: .5em;
+}
+
+.card strong {
+    margin-right: .5em;
+}
+
+.pagination {
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.card-footer {
+    text-align: right;
+}
+
+.card-footer .card-link {
+    display: inline-block;
+}
+
+/* Рейтинг звезды */
+.rating {
+    margin-top: 5px;
+}
+
+.rating .fa-fw {
+    color: #FBCD45;
+    width: .9em;
+    margin: 0;
+    font-size: 1.7em;
+}
+
+.rating .fa-fw::before {
+    width: .9em;
+}
+
+.post-rating {
+    display: inline-block;
+    font-size: .8em;
+}
+
+/* конец посты*/
+
+footer {
+    background: #ecf0f1;
+    height: 200px;
+}
+
+.auth-wrap .card {
+    width: 100%;
+    text-align: center;
+    min-width: 450px;
+}
+
+.main-content {
+    width: 500px;
+}
+
+.auth-form {
+    max-width: 600px;
+    width: 100%;
+}
+
+.auth-form h3 {
+    margin-bottom: 1em;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.fieldset-btn {
+    text-align: right;
+}
+
+.have-login {
+    margin-top: 2em;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.password-recovery.have-login {
+    text-align: left;
+}
+
+.have-login a {
+    margin-left: .5em;
+}
+
+/* страница Post */
+.post-wrapper {
+    position: relative;
+    top: -8%;
+}
+
+.post-wrapper .description {
+    min-height: 300px;
+}
+
+.post-hotel {
+    display: inline-block;
+    margin-right: .5em
+}
+
+/* страница "empty" */
+.empty .container {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty img {
+    height: 200px;
+}
+

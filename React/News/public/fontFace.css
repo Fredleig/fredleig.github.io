@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./static/fonts/Roboto-Regular.eot");
+  /*  src: local("Roboto-Regular") - Если есть шрифт локально то он будет грузить локальный шрифт, в аргументы записывать предпологаемое название файла */
+  src: local("Roboto-Regular"), local("Roboto-Regular"), 
+    url("./static/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./static/fonts/Roboto-Regular.woff") format("woff"),
+    url("./static/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("./static/fonts/Roboto-Light.eot");
+  src: local("Roboto-Light"), local("Roboto-Light"),
+    url("./static/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"),
+    url("./static/fonts/Roboto-Light.woff") format("woff"),
+    url("./static/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url("./static/fonts/Roboto-Thin.eot");
+  src: local("Roboto-Thin"), local("Roboto-Thin"),
+    url("./static/fonts/Roboto-Thin.eot?#iefix") format("embedded-opentype"),
+    url("./static/fonts/Roboto-Thin.woff") format("woff"),
+    url("./static/fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

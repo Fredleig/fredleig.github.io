@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+      "jsx": "preserve",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "checkJs": false,
+    "module": "ESNext",
+    "declaration": false,
+    "sourceMap": false,
+    "removeComments": true,
+    "locale": "ru",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"]
+}

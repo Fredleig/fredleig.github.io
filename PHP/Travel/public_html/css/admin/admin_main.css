@@ -1,0 +1,101 @@
+/*меню*/
+.main-header .logo {
+    width: 250px;
+}
+
+.navbar.navbar-static-top {
+    margin-left: 250px;
+}
+
+.main-sidebar {
+    width: 250px;
+}
+
+.sidebar-menu.tree li a {
+    width: 250px;
+}
+
+.table.table-bordered img {
+    height: 150px;
+    width: 250px;
+}
+
+/*Контент*/
+.content-wrapper {
+    margin-left: 250px;
+}
+
+/*Футер*/
+.main-footer {
+    margin-left: 250px;
+}
+
+/*Конец*/
+
+
+.input-noEdit {
+    border: solid 1px #d2d6de;
+    background: #d2d6de;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+}
+
+.functions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.left-func {
+    margin-bottom: 15px;
+}
+
+.preview-img img {
+    margin-top: 15px;
+    height: 200px;
+    width: 300px;
+}
+
+/* Рейтинг звезды */
+.rating {
+    display: inline-block;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.rating .fa-fw {
+    color: #FBCD45;
+    width: .8em;
+    margin: 0;
+    font-size: 2em;
+}
+
+.rating .fa-fw::before {
+    width: .8em;
+}
+
+/* fieldset */
+fieldset {
+    border: 1px solid #cbcbcb;
+}
+
+.fieldset-wrap {
+    padding: 2em;
+}
+
+.fieldset-lvl2 {
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+legend {
+    width: auto;
+    border-bottom: none;
+    margin-bottom: auto;
+    font-size: 18px;
+}
+
+/* color picker */
+.input-group .input-group-addon {
+    width: 0;
+}

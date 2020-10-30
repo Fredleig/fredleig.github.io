@@ -1,0 +1,25 @@
+@import "../../styles/vars"
+
+.user-menu
+  height: 100%
+  padding: $headerHeight/4 0
+  box-sizing: border-box
+  text-align: right
+  font-family: "Roboto-Light", sans-serif
+  &-wrapper-link
+    display: inline-block
+    vertical-align: middle
+    .user-menu-link
+      cursor: pointer
+      text-decoration: none
+      color: $asaideBackground
+      transition: all .1s ease
+      &:hover
+        color: $accentColor
+      &:active
+        color: $accentColorGreen
+    .user-menu-link.active
+      color: $accentColor
+    span.slash
+      margin: 0 .5em
+

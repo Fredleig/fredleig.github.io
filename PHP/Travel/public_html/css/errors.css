@@ -1,0 +1,11 @@
+.page-error {
+    position: relative;
+    height: 100vh;
+}
+
+.jumbotron {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -150px;
+}

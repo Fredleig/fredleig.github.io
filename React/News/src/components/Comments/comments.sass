@@ -1,0 +1,36 @@
+@import "../../styles/vars"
+.comments-wrap
+  margin-top: 30px
+
+.comments
+  .comments-quantity
+    display: inline-block
+    font-size: 1.3em
+    margin-bottom: 20px
+
+.comment
+  display: flex
+  flex-flow: row
+  padding-bottom: 30px
+  img
+    width: 80px
+    height: 80px
+    margin-right: 20px
+  &:last-child
+    padding-bottom: 0
+  //  border-bottom: 1px solid $colorText
+.comment-content
+  .comment-user
+    font-family: Roboto-Regular, sans-serif
+    font-size: 0.8em
+    padding-bottom: 5px
+    border-bottom: 1px solid $colorText
+    .user
+      font-weight: bold
+      color: $asaideBackground
+    .data
+      color: $colorText
+  .comment-text
+    padding-top: 10px
+    color: $colorText
+    font-family: Roboto-Light, sans-serif
