@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, { useCallback } from "react";
 import "./ImageItem.sass";
 import { Col } from "react-bootstrap";
 
@@ -12,8 +12,8 @@ const ImageItem: React.FC<IImageItemProps> = (props) => {
   const { urlImage, onClickImage, tagName } = props;
 
   const handleClickImage = useCallback(() => {
-    onClickImage(tagName)
-  }, [onClickImage])
+    onClickImage(tagName);
+  }, [onClickImage, tagName]);
 
   return (
     <Col md={4}>
@@ -24,4 +24,4 @@ const ImageItem: React.FC<IImageItemProps> = (props) => {
   );
 };
 
-export default ImageItem;
+export default React.memo(ImageItem);

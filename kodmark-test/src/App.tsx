@@ -60,7 +60,7 @@ class App extends React.PureComponent<unknown, IAppState> {
           this.setState({ ...this.state, isLoading: false });
         })
         .then(() => {
-          this.setState({inputValue: ""})
+          this.setState({ inputValue: "" });
           if (this.state.uniqueTags.length !== 0) {
             this.getUniqueTags();
           }
@@ -69,7 +69,6 @@ class App extends React.PureComponent<unknown, IAppState> {
     } else {
       this.setState({ isAlertInputData: true });
     }
-
   }
 
   private getUniqueTags() {
@@ -86,7 +85,7 @@ class App extends React.PureComponent<unknown, IAppState> {
   }
 
   private handleClickImage(tagName: string) {
-    this.setState({inputValue: tagName})
+    this.setState({ inputValue: tagName });
   }
 
   private handleGroup() {
@@ -156,12 +155,31 @@ class App extends React.PureComponent<unknown, IAppState> {
         {uniqueTags.length === 0 && (
           <Row>
             {images.map((item, index) => (
-              <ImageItem key={index} urlImage={item.url} tagName={item.tag} onClickImage={this.clickImageHandler} />
+              <ImageItem
+                key={index}
+                urlImage={item.url}
+                tagName={item.tag}
+                onClickImage={this.clickImageHandler}
+              />
             ))}
           </Row>
         )}
         {uniqueTags.map((tagName) => (
-          <ImageGroup key={tagName} images={images} onClickImage={this.clickImageHandler} tagName={tagName} />
+          <ImageGroup key={tagName} tagName={tagName}>
+            {images.map((item, index) => {
+              if (item.tag === tagName) {
+                return (
+                  <ImageItem
+                    key={index}
+                    onClickImage={this.clickImageHandler}
+                    tagName={tagName}
+                    urlImage={item.url}
+                  />
+                );
+              }
+              return null;
+            })}
+          </ImageGroup>
         ))}
       </Container>
     );

@@ -5,26 +5,18 @@ import "./ImageGroup.sass";
 
 interface IImageGroupProps {
   tagName: string;
-  images: { url: string; tag: string }[];
-  onClickImage: (tagName: string) => void;
+  children: React.ReactNode;
 }
 
 const ImageGroup: React.FC<IImageGroupProps> = (props) => {
-  const { tagName, images, onClickImage } = props;
+  const { tagName, children } = props;
 
   return (
     <div className="box-group">
       <h5>{tagName}</h5>
-      <Row>
-        {images.map((item, index) => {
-          if (item.tag === tagName) {
-            return <ImageItem key={index} onClickImage={onClickImage} tagName={tagName} urlImage={item.url} />;
-          }
-          return null;
-        })}
-      </Row>
+      <Row>{children}</Row>
     </div>
   );
 };
 
-export default ImageGroup;
+export default React.memo(ImageGroup);
