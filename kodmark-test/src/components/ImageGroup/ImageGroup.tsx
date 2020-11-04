@@ -6,10 +6,11 @@ import "./ImageGroup.sass";
 interface IImageGroupProps {
   tagName: string;
   images: { url: string; tag: string }[];
+  onClickImage: (tagName: string) => void;
 }
 
 const ImageGroup: React.FC<IImageGroupProps> = (props) => {
-  const { tagName, images } = props;
+  const { tagName, images, onClickImage } = props;
 
   return (
     <div className="box-group">
@@ -17,7 +18,7 @@ const ImageGroup: React.FC<IImageGroupProps> = (props) => {
       <Row>
         {images.map((item, index) => {
           if (item.tag === tagName) {
-            return <ImageItem key={index} urlImage={item.url} />;
+            return <ImageItem key={index} onClickImage={onClickImage} tagName={tagName} urlImage={item.url} />;
           }
           return null;
         })}

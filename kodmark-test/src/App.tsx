@@ -22,6 +22,7 @@ class App extends React.PureComponent<unknown, IAppState> {
   >;
   private readonly clearHandler: OmitThisParameter<() => void>;
   private readonly groupHandler: OmitThisParameter<() => void>;
+  private readonly clickImageHandler: OmitThisParameter<(tagName: string) => void>;
 
   constructor(props: unknown) {
     super(props);
@@ -29,6 +30,7 @@ class App extends React.PureComponent<unknown, IAppState> {
     this.inputChangeHandler = this.handleInputChange.bind(this);
     this.clearHandler = this.handleClear.bind(this);
     this.groupHandler = this.handleGroup.bind(this);
+    this.clickImageHandler = this.handleClickImage.bind(this);
     this.state = {
       inputValue: "",
       images: [],
@@ -58,6 +60,7 @@ class App extends React.PureComponent<unknown, IAppState> {
           this.setState({ ...this.state, isLoading: false });
         })
         .then(() => {
+          this.setState({inputValue: ""})
           if (this.state.uniqueTags.length !== 0) {
             this.getUniqueTags();
           }
@@ -66,6 +69,7 @@ class App extends React.PureComponent<unknown, IAppState> {
     } else {
       this.setState({ isAlertInputData: true });
     }
+
   }
 
   private getUniqueTags() {
@@ -79,6 +83,10 @@ class App extends React.PureComponent<unknown, IAppState> {
 
   private handleClear() {
     this.setState({ images: [], uniqueTags: [] });
+  }
+
+  private handleClickImage(tagName: string) {
+    this.setState({inputValue: tagName})
   }
 
   private handleGroup() {
@@ -148,12 +156,12 @@ class App extends React.PureComponent<unknown, IAppState> {
         {uniqueTags.length === 0 && (
           <Row>
             {images.map((item, index) => (
-              <ImageItem key={index} urlImage={item.url} />
+              <ImageItem key={index} urlImage={item.url} tagName={item.tag} onClickImage={this.clickImageHandler} />
             ))}
           </Row>
         )}
         {uniqueTags.map((tagName) => (
-          <ImageGroup key={tagName} images={images} tagName={tagName} />
+          <ImageGroup key={tagName} images={images} onClickImage={this.clickImageHandler} tagName={tagName} />
         ))}
       </Container>
     );
