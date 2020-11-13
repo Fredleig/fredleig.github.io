@@ -13,12 +13,17 @@ import { FormInstance } from "antd/es/form";
 import { History } from "history";
 import withForm from "../../Hocs/withForm";
 import Header from "../../components/Header/Header";
+import {ColumnProps} from "antd/es/table";
 
 enum ENameColumn {
   key = "key",
   name = "name",
   tel = "tel",
   email = "email",
+}
+
+interface IColumnProps<T = any> extends ColumnProps<T> {
+  editable?: boolean;
 }
 
 type TRecord = {
@@ -104,7 +109,7 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
         dataIndex: "operation",
         render: (_: any, record: TRecord) => this.getOperationsColumn(record),
       },
-    ];
+    ] as IColumnProps[];
   }
 
   private getColumnSearchProps = (dataIndex: any, title: string) => ({
@@ -213,7 +218,7 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
     Ajax.DELETE(`${pathContacts}/${record.key}`)
       .catch((error: string) => this.getErrorModal(error))
       .then(() => {
-        const newData = [...this.state.data].filter((item: any) => record.key !== item.id);
+        const newData = [...this.state.data].filter((item: TData) => record.key !== item.id);
         this.setState({ data: newData });
       });
   }
@@ -234,12 +239,12 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
   }
 
   private deleteNewRow() {
-    const newData = [...this.state.data].filter((item: any) => this.emptyRow !== item.id);
+    const newData = [...this.state.data].filter((item: TData) => this.emptyRow !== item.id);
     this.setState({ data: newData });
   }
 
   private getDataSource() {
-    return this.state.data.map((item: any) => ({
+    return this.state.data.map((item: TData) => ({
       key: item.id,
       name: item[ENameColumn.name],
       tel: item[ENameColumn.tel],
@@ -248,7 +253,7 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
   }
 
   private columnsMerge() {
-    return this.columns.map((col: any) => {
+    return this.columns.map((col: IColumnProps) => {
       if (!col.editable) {
         return col;
       }
