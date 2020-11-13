@@ -13,7 +13,8 @@ import { FormInstance } from "antd/es/form";
 import { History } from "history";
 import withForm from "../../Hocs/withForm";
 import Header from "../../components/Header/Header";
-import {ColumnProps} from "antd/es/table";
+import { ColumnProps } from "antd/es/table";
+import { ColumnsType } from "antd/lib/table/interface";
 
 enum ENameColumn {
   key = "key",
@@ -267,7 +268,7 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
           editing: this.isEditing(record),
         }),
       };
-    });
+    }) as ColumnsType<any>;
   }
 
   private getOperationsColumn(record: TRecord) {
