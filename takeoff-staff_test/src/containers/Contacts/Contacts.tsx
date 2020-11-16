@@ -113,41 +113,43 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
     ] as IColumnProps[];
   }
 
-  private getColumnSearchProps = (dataIndex: any, title: string) => ({
-    filterDropdown: (filterProps: FilterDropdownProps) => (
-      <SearchTableColumn
-        ref={this.searchInput}
-        dataIndex={dataIndex}
-        title={title}
-        onSearch={this.handleSearch}
-        onReset={this.handleReset}
-        {...filterProps}
-      />
-    ),
-    filterIcon: (filtered: boolean) => (
-      <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
-    ),
-    onFilter: (value: any, record: TRecord[]) =>
-      record[dataIndex]
-        ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
-        : "",
-    onFilterDropdownVisibleChange: (visible: boolean) => {
-      if (visible) {
-        setTimeout(() => this.searchInput.current.select(), 100);
-      }
-    },
-    render: (text: any) =>
-      this.state.searchedColumn === dataIndex ? (
-        <Highlighter
-          highlightStyle={highlightStyle}
-          searchWords={[this.state.searchText]}
-          autoEscape={true}
-          textToHighlight={text ? text.toString() : ""}
+  private getColumnSearchProps(dataIndex: any, title: string) {
+    return {
+      filterDropdown: (filterProps: FilterDropdownProps) => (
+        <SearchTableColumn
+          ref={this.searchInput}
+          dataIndex={dataIndex}
+          title={title}
+          onSearch={this.handleSearch}
+          onReset={this.handleReset}
+          {...filterProps}
         />
-      ) : (
-        text
       ),
-  });
+      filterIcon: (filtered: boolean) => (
+        <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+      ),
+      onFilter: (value: any, record: TRecord[]) =>
+        record[dataIndex]
+          ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
+          : "",
+      onFilterDropdownVisibleChange: (visible: boolean) => {
+        if (visible) {
+          setTimeout(() => this.searchInput.current.select(), 100);
+        }
+      },
+      render: (text: any) =>
+        this.state.searchedColumn === dataIndex ? (
+          <Highlighter
+            highlightStyle={highlightStyle}
+            searchWords={[this.state.searchText]}
+            autoEscape={true}
+            textToHighlight={text ? text.toString() : ""}
+          />
+        ) : (
+          text
+        ),
+    };
+  }
 
   @boundMethod
   private handleSearch(
@@ -188,7 +190,10 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
         user_name: this.userName,
         ...fieldValues,
       })
-        .catch((error: string) => this.getErrorModal(error))
+        .catch((error: string) => {
+          this.getErrorModal(error)
+          return Promise.reject()
+        })
         .then(() => {
           const newData: TData[] = [...this.state.data];
           const index = newData.findIndex((item: TData) => record.key === item.id);
@@ -204,7 +209,10 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
     const fieldValues = form.getFieldsValue();
     form.validateFields().then(() => {
       Ajax.POST(pathContacts, { user_name: this.userName, ...fieldValues })
-        .catch((error: string) => this.getErrorModal(error))
+        .catch((error: string) => {
+          this.getErrorModal(error)
+          return Promise.reject()
+        })
         .then((responseData) => {
           const newData: TData[] = [...this.state.data];
           const index = newData.findIndex((item: TData) => this.emptyRow === item.id);
@@ -217,7 +225,10 @@ class Contacts extends React.PureComponent<IContactsProps, IContactsState> {
   @boundMethod
   private handleDelete(record: TRecord) {
     Ajax.DELETE(`${pathContacts}/${record.key}`)
-      .catch((error: string) => this.getErrorModal(error))
+      .catch((error: string) => {
+        this.getErrorModal(error)
+        return Promise.reject()
+      })
       .then(() => {
         const newData = [...this.state.data].filter((item: TData) => record.key !== item.id);
         this.setState({ data: newData });

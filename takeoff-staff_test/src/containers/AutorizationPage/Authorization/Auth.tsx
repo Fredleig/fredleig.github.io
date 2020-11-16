@@ -25,7 +25,10 @@ const Auth: React.FC = (props) => {
             message.error("Не правильное имя пользователя или пароль");
           }
         })
-          .catch((error: string) => Modal.error({title: "Error", content: error.toString()}))
+          .catch((error: string) => {
+            Modal.error({title: "Error", content: error.toString()})
+            return Promise.reject()
+          })
           .then(() => history.push(contacts));
     },
     [history]
