@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Casper";
+    src: url("./static/fonts/casper-bold-italic.eot");
+    src: local("Barbados-Cyr"), local("Barbados-Cyr"),
+    url("./static/fonts/casper-bold-italic.eot?#iefix") format("embedded-opentype"),
+    url("./static/fonts/casper-bold-italic.woff") format("woff"),
+    url("./static/fonts/casper-bold-italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
