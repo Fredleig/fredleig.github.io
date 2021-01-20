@@ -26,12 +26,10 @@
 
 .collapse-up {
     transform: rotate(180deg);
-
     animation: rotate-up 300ms ease
 }
 
 .collapse-down {
-
     animation: rotate-down 300ms ease
 }
 
