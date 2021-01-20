@@ -1,0 +1,55 @@
+:root {
+    --border: 1px solid black;
+    --padding-side: 10px
+}
+.collapse-header {
+    display: flex;
+    justify-content: space-between;
+    background: #98fab9;
+    border: var(--border);
+    padding: 5px var(--padding-side);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.collapse-header > span:first-letter {
+    text-transform: uppercase;
+}
+
+.collapse-text {
+    min-height: 200px;
+    padding: var(--padding-side);
+    border-bottom: var(--border);
+    border-right: var(--border);
+    border-left: var(--border);
+}
+
+.collapse-up {
+    transform: rotate(180deg);
+
+    animation: rotate-up 300ms ease
+}
+
+.collapse-down {
+
+    animation: rotate-down 300ms ease
+}
+
+@keyframes rotate-up {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}
+
+
+@keyframes rotate-down {
+    0% {
+        transform: rotate(-180deg)
+    }
+    100% {
+         transform: rotate(0)
+    }
+}
