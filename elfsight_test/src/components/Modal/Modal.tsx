@@ -10,19 +10,30 @@ interface IModalProps {
 }
 
 const Modal: React.FC<IModalProps> = (props) => {
-  const rootElement = useRef(document.createElement("div"));
+  const rootElement = useRef<undefined | HTMLDivElement>();
   const { isShowModal, onChangeVisible, className, children } = props;
 
   useEffect(() => {
+    const element = getRootElement();
+
     if (isShowModal) {
-      rootElement.current.classList.add("root_modal");
-      document.body.appendChild(rootElement.current);
+      element.classList.add("root_modal");
+      document.body.appendChild(element);
     } else {
-      rootElement.current.remove();
+      element.remove();
     }
 
-    return () => rootElement.current.remove();
-  }, [isShowModal, rootElement]);
+    return () => element.remove();
+  }, [isShowModal]);
+
+  const getRootElement = () => {
+    if(!rootElement.current) {
+      rootElement.current = document.createElement("div");
+      return rootElement.current;
+    }
+
+    return rootElement.current;
+  }
 
   const handleClickWrapperModal = (e: React.MouseEvent<HTMLDivElement>) => {
     e.currentTarget === e.target && onChangeVisible?.();
@@ -30,6 +41,7 @@ const Modal: React.FC<IModalProps> = (props) => {
 
   const content = (
     <div
+      key="wrapper_modal"
       onClick={handleClickWrapperModal}
       className={`wrapper_modal ${className || ""}`}
     >
@@ -37,7 +49,7 @@ const Modal: React.FC<IModalProps> = (props) => {
     </div>
   );
 
-  return ReactDOM.createPortal(content, rootElement.current);
+  return ReactDOM.createPortal(content, getRootElement());
 };
 
 export default React.memo(Modal);
