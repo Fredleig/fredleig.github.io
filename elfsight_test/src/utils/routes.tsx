@@ -19,8 +19,8 @@ export enum ENamesRoute {
 }
 
 export const rootPath = "/";
-export const userPath = `${rootPath}users/:id_user/albums`;
-export const photosPath = `${userPath}/:id_album/photos`;
+export const albumsPath = `${rootPath}users/:id_user/albums`;
+export const photosPath = `${albumsPath}/:id_album/photos`;
 
 export const routes: TRoutes[] = [
   {
@@ -34,7 +34,7 @@ export const routes: TRoutes[] = [
     key: "user",
     dynamicName: ENamesRoute.userName,
     exact: true,
-    path: userPath,
+    path: albumsPath,
     component: Albums,
   },
   {
