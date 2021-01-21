@@ -1,0 +1,72 @@
+@import "../../styles/variables"
+$height_album: 300px
+
+.user-profile
+  text-align: center
+.albums_container
+  padding: $root_padding-side
+  &_title
+    font-weight: bold
+    font-size: 18px
+    border-bottom: 1px solid $accent_color-light-1
+    margin-bottom: 10px
+  .albums
+    display: flex
+    flex-wrap: wrap
+.albums_item
+  position: relative
+  margin: 5px
+  text-decoration: none
+  width: $height_album
+  font-size: 16px
+  font-weight: bold
+  color: black
+  &:hover
+    text-decoration: underline
+    .albums_item_image > .albums_item-shadow
+      opacity: 0.5
+    .albums_item_info
+      opacity: 1
+  &_image
+    position: relative
+    padding: 0
+    margin: 0
+    display: block
+    border-radius: $border-radius_image
+    background: #fcfafa
+    width: $height_album
+    height: $height_album
+    .albums_item-shadow
+      position: absolute
+      top: 0
+      opacity: 0
+      border-radius: $border-radius_image
+      background: linear-gradient(0deg, rgba(0,0,0,1) 32%, rgba(0,0,0,0) 100%)
+      width: $height_album
+      height: $height_album
+    & > img
+      border-radius: $border-radius_image
+      height: inherit
+      width: inherit
+  &_title
+    text-align: center
+    width: $height_album
+    white-space: nowrap
+    overflow: hidden
+    margin-top: 5px
+    text-overflow: ellipsis
+    &:first-letter
+      text-transform: uppercase
+  &_info
+        position: absolute
+        width: 100%
+        height: 20%
+        bottom: 30px
+        padding: 10px
+        opacity: 0
+        text-align: center
+        font-size: 13px
+        font-weight: normal
+        color: white
+        box-sizing: border-box
+

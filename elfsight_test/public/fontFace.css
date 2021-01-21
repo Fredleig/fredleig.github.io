@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "NimbusSanL";
+    src: url("./static/fonts/NimbusSanL-Reg.eot");
+    src: local("Nimbus San L"), local("Nimbus San L"),
+    /*url("./static/fonts/NimbusSanL-Reg?#iefix") format("embedded-opentype"),*/
+    url("./static/fonts/NimbusSanL-Reg.woff") format("woff"),
+    url("./static/fonts/NimbusSanL-Reg.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NimbusSanL";
+    src: url("./static/fonts/NimbusSanL-Bol.eot");
+    src: local("Nimbus San L"), local("Nimbus San L"),
+    /*url("./static/fonts/NimbusSanL-Bol?#iefix") format("embedded-opentype"),*/
+    url("./static/fonts/NimbusSanL-Bol.woff") format("woff"),
+    url("./static/fonts/NimbusSanL-Bol.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,18 @@
+@import "../../styles/variables"
+$height_avatar: 50px
+
+.wrapper_card-user
+  margin-bottom: 10px
+  border-radius: 4px
+  transition: $transition_color
+  display: flex
+  justify-content: center
+  .card-user:hover
+    .card-user_avatar
+      transition: all .15s ease
+      border: 2px solid $accent_color-additional-2
+      box-shadow: 0px 2px 30px -1px rgba(0,0,0,0.75)
+    .card-user_user-name
+      text-decoration: underline
+  .card-user_link
+    text-decoration: none

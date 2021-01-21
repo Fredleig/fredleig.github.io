@@ -1,0 +1,49 @@
+.photo_modal
+  background-color: rgba(0, 0, 0, .8)
+.wrapper_photo_modal
+  position: relative
+  background-color: white
+  border: 1px solid black
+  border-radius: 3px
+  padding: 10px
+  box-sizing: border-box
+  .photo_title
+    text-align: center
+    &:first-letter
+      text-transform: uppercase
+      font-size: 17px
+  .wrapper_photo
+    position: relative
+    min-width: 600px
+    min-height: 600px
+    & > img
+      position: relative
+      display: block
+      margin: 0
+      z-index: 2
+    .wrapper_preloader-photo
+      position: absolute
+      top: 50%
+      left: 42%
+    .photo_button
+      $line-height: 30px
+      cursor: pointer
+      position: absolute
+      background: none
+      border: none
+      bottom: calc(50% - #{$line-height})
+      font-size: 60px
+      font-weight: bold
+      line-height: $line-height
+      color: darken(white, 60%)
+      transition: color .2s ease
+      &:hover
+        color: white
+      &:active
+        color: darken(white, 30%)
+      &:focus, &:active
+        outline: none
+    .photo_button-minus
+      left: -60px
+    .photo_button-plus
+      right: -60px
