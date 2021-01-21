@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useRef} from "react";
 import * as ReactDOM from "react-dom";
 import "./Modal.sass";
 
@@ -10,18 +10,18 @@ interface IModalProps {
 }
 
 const Modal: React.FC<IModalProps> = (props) => {
-  const rootElement = document.createElement("div");
+  const rootElement = useRef(document.createElement("div"));
   const { isShowModal, onChangeVisible, className, children } = props;
 
   useEffect(() => {
     if (isShowModal) {
-      rootElement.classList.add("root_modal");
-      document.body.appendChild(rootElement);
+      rootElement.current.classList.add("root_modal");
+      document.body.appendChild(rootElement.current);
     } else {
-      rootElement.remove();
+      rootElement.current.remove();
     }
 
-    return () => rootElement.remove();
+    return () => rootElement.current.remove();
   }, [isShowModal, rootElement]);
 
   const handleClickWrapperModal = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -37,7 +37,7 @@ const Modal: React.FC<IModalProps> = (props) => {
     </div>
   );
 
-  return ReactDOM.createPortal(content, rootElement);
+  return ReactDOM.createPortal(content, rootElement.current);
 };
 
 export default React.memo(Modal);

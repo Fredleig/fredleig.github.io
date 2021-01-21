@@ -61,6 +61,7 @@ class PhotoModal extends React.Component<IPhotosModalProps, IPhotosModalState> {
       const photo = data[indexImg];
       return (
         <Modal
+          key="modal-image"
           isShowModal={isShowModal}
           className="photo_modal"
           onChangeVisible={onChangeVisible}
